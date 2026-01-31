@@ -47,16 +47,17 @@ jobs:
             -Dsonar.junit.reportsPath=target/surefire-reports \
             -Dsonar.jacoco.reportsPath=target/jacoco.exec \
             -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
+            -Dsonar.qualitygate.wait=true
             
 
 
       # Check the Quality Gate status
-      - name: SonarCloud Quality Gate Check
-        id: sonarqube-quality-gate-check
-        uses: SonarSource/sonarcloud-quality-gate-action@v1
-        timeout-minutes: 5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      # - name: SonarCloud Quality Gate Check
+      #   id: sonarqube-quality-gate-check
+      #   uses: SonarSource/sonarcloud-quality-gate-action@v1
+      #   timeout-minutes: 5
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
            
 #
   # BUILD_AND_PUBLISH:
