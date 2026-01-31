@@ -30,6 +30,10 @@ jobs:
       - name: Setup SonarQube
         uses: warchant/setup-sonar-scanner@v7
 
+      # Build the project with tests, jacoco and checkstyle report generation
+      - name: Build with Maven
+        run: mvn clean verify
+
       # Run sonar-scanner
       - name: SonarQube Scan
         run: |
