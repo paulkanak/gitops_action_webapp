@@ -96,8 +96,8 @@ jobs:
       - name: Get Kube config file
         run: aws eks update-kubeconfig --region ${{ env.AWS_REGION }} --name ${{ env.EKS_CLUSTER }}
 
-      - name: Print config file
-        run: cat ~/.kube/config
+      # - name: Print config file
+      #   run: cat ~/.kube/config
 
       - name: Login to ECR
         run: |
